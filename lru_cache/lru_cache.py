@@ -49,8 +49,9 @@ class LRUCache:
     def set(self, key, value):
         if key in self.cache:
             node = self.cache[key]
+            print("Node", node.value)
             self.storage.move_to_end(node)
-            node.value = (key, value)
+            node.value = (key, value)  # replacing the key and value
         else:
             if self.current_nodes == self.max_nodes:
                 del self.cache[self.storage.head.value[0]]
@@ -58,5 +59,5 @@ class LRUCache:
                 self.current_nodes -= 1
 
         self.storage.add_to_tail((key, value))
-        self.cache[key] = self.storage.tail # node = {key: value}
+        self.cache[key] = self.storage.tail  # node = {key: value}
         self.current_nodes += 1
