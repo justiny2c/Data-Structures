@@ -119,15 +119,16 @@ class BinarySearchTree:
     def dft_print(self, node):
         self.stack = Stack()
         self.stack.push(node)
-        # print("")
+     
         while self.stack.len() != 0:
             new_node = self.stack.pop()
             print(new_node.value)
 
-            if (new_node.left):
+            if(new_node.left):
                 self.stack.push(new_node.left)
-            if (new_node.right):
+            if(new_node.right):
                 self.stack.push(new_node.right)
+
 
     # STRETCH Goals -------------------------
     # Note: Research may be required
