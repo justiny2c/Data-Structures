@@ -58,6 +58,6 @@ class LRUCache:
                 self.storage.remove_from_head()
                 self.current_nodes -= 1
 
-        self.storage.add_to_tail((key, value))
+        self.storage.add_to_tail((key, value)) 
         self.cache[key] = self.storage.tail  # node = {key: value}
         self.current_nodes += 1
