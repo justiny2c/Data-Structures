@@ -9,10 +9,10 @@ class Queue:
         # Why is our DLL a good choice to store our elements?
         self.storage = DoublyLinkedList()  # DLL
 
-    def enqueue(self, items):        
+    def enqueue(self, items):
         self.storage.add_to_tail(items)
         self.size += 1
-        
+
     def dequeue(self):
         if self.size == 0:
             return None
