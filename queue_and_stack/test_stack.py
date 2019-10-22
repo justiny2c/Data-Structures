@@ -31,8 +31,6 @@ class QueueTests(unittest.TestCase):
     def test_pop_respects_order(self):
         self.s.push(100)
         self.s.push(101)
-        self.s.push(105)
-        self.assertEqual(self.s.pop(), 105)
         self.assertEqual(self.s.len(), 2)
         self.assertEqual(self.s.pop(), 101)
         self.assertEqual(self.s.len(), 1)
